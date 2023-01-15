@@ -11,6 +11,7 @@ import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
 import Logout from "./pages/auth/logout";
 import Profile from "./pages/common/profile";
+import TestLogin from "./pages/test/TestLogin";
 
 function Main() {
 	return (
@@ -26,6 +27,7 @@ function Main() {
 					<Route path="logout" element={<Logout />} />
 					<Route path="profile" element={<Profile />} />
 					<Route path="*" element={<Nopage />} />
+					<Route path="test_login" element={<TestLogin />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
