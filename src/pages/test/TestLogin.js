@@ -22,16 +22,16 @@ function TestLogin() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		const data = new FormData(event.target);
-		console.log(data);
 		jsonSrv.post("/auth/login.php", data)
 			.then((response) => {
 				console.log(response.data);
 				if (response.data.status === "success") {
-					let user = response.data.user;
-					user.password = cryptoJs.AES.encrypt(user.password,
+					let data = response.data.data;
+					console.log(data);
+					let token = cryptoJs.AES.encrypt(data.token,
 						process.env.REACT_APP_CRYPTOJS_SECRET_KEY).toString();
-					localStorage.setItem("user", JSON.stringify(user));
-					window.location.href = "/";
+					sessionStorage.setItem("token", token);
+					console.log(sessionStorage.getItem("token"));
 				}
 			})
 			.catch((error) => {
