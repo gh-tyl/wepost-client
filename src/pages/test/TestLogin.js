@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react";
 import jsonSrv from "../../Services/jsonSrv";
-import cryptoJs from "crypto-js";
+import enc from "../../lib/crypt";
 
 const theme = createTheme();
 
@@ -28,8 +28,7 @@ function TestLogin() {
 				if (response.data.status === "success") {
 					let data = response.data.data;
 					console.log(data);
-					let token = cryptoJs.AES.encrypt(data.token,
-						process.env.REACT_APP_CRYPTOJS_SECRET_KEY).toString();
+					let token = enc(data.token);
 					sessionStorage.setItem("token", token);
 					console.log(sessionStorage.getItem("token"));
 				}
