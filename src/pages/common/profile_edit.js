@@ -1,4 +1,3 @@
-// import { Paper, Grid, Container, TextField, CardContent, Button } from "@mui/material"
 import { Paper, Grid, Container, TextField, Typography, Button } from "@mui/material"
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
@@ -6,7 +5,6 @@ function ProfileEdit() {
 	return (
 		<>
 			<Container maxWidth="sm" >
-				{/* <Paper elevation={1} style={{ padding: "20px", marginTop: "20px" }}> */}
 				<Paper elevation={1} sx={{ padding: "20px", marginTop: "20px" }}>
 					<Grid container spacing={2}>
 						<Grid item xs={12} sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -26,7 +24,6 @@ function ProfileEdit() {
 								type="file"
 							/>
 							<label htmlFor="contained-button-file">
-								{/* <Button variant="contained" color="primary" component="span"> */}
 								<Button variant="contained" color="primary" component="span" sx={{ width: 300, margin: "5px 0" }}>
 									<PhotoCameraIcon color="white" sx={{ marginRight: "5px" }} />
 									Upload photo

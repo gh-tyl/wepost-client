@@ -2,7 +2,6 @@ import { ReactDOM } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./pages/Layout";
-import Nopage from "./pages/Nopage";
 import { pages, auths, others, tests } from './config/config';
 
 function Main() {
