@@ -21,14 +21,14 @@ function Main() {
 					{
 						auths.map((auth, index) => {
 							return (
-								<Route key={index} path={auth.path} element={<auth.element />} />
+								<Route key={index + pages.length} path={auth.path} element={<auth.element />} />
 							)
 						})
 					}
 					{
 						tests.map((test, index) => {
 							return (
-								<Route key={index} path={test.path} element={<test.element />} />
+								<Route key={index + pages.length + auths.length} path={test.path} element={<test.element />} />
 							)
 						})
 					}
