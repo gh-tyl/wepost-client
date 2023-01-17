@@ -6,9 +6,10 @@ import Login from "../pages/auth/login"
 import Register from "../pages/auth/register"
 import Logout from "../pages/auth/logout"
 import Profile from "../pages/common/profile"
+import ProfileEdit from "../pages/common/profile_edit"
 import TestLogin from "../pages/test/TestLogin"
 import TestProfile from "../pages/test/TestProfile"
-// import Nopage from "../pages/Nopage"
+import Nopage from "../pages/Nopage"
 
 export const pages = [
 	{
@@ -62,6 +63,22 @@ export const auths = [
 		element: Logout,
 	}
 ];
+
+export const others = [
+	{
+		name: '404',
+		path: '*',
+		loginUsers: ['admin', 'user', 'guest'],
+		element: Nopage,
+	},
+	{
+		name: 'Profile Edit',
+		path: 'profile_edit',
+		loginUsers: ['admin', 'user'],
+		element: ProfileEdit,
+	},
+];
+
 export const tests = [
 	{
 		name: 'Test Login',
