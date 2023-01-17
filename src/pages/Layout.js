@@ -17,8 +17,8 @@ import { pages, auths } from '../config/config';
 
 // You can change the login user here.
 // let loginUser = "admin"
-let loginUser = "user"
-// let loginUser = "guest"
+// let loginUser = "user"
+let loginUser = "guest"
 
 function Layout() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
