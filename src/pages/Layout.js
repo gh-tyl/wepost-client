@@ -16,8 +16,8 @@ import { blueGrey } from '@mui/material/colors';
 import { pages, auths } from '../config/config';
 
 // You can change the login user here.
-// let loginUser = "admin"
-let loginUser = "user"
+let loginUser = "admin"
+// let loginUser = "user"
 // let loginUser = "guest"
 
 function Layout() {
