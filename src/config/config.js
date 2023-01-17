@@ -36,6 +36,11 @@ export const pages = [
 		loginUsers: ['admin'],
 		element: Dashboard,
 	},
+	{
+		name: 'Register',
+		path: 'register',
+		loginUsers: ['guest'],
+	},
 ];
 export const auths = [
 	{

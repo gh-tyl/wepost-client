@@ -42,5 +42,4 @@ function Main() {
 		</BrowserRouter>
 	)
 };
-
 export default Main;
