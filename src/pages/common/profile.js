@@ -1,5 +1,5 @@
 import * as React from 'react';
-import profileSrv from "../../Services/profileSrv";
+import jsonSrv from "../../Services/jsonSrv";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import { Paper, Grid, Avatar, Container, Link, Button, Typography, Card } from "@mui/material";
@@ -52,7 +52,7 @@ function Profile() {
 	const navigate = useNavigate();  // to go to the profile edit page
 
 	const getUser = () => {
-		profileSrv.profileInfo({ userId: 1000 })
+		jsonSrv.post({token: 1000})
 			.then(res => {
 				console.log(res);
 				setdbUser(res.data);
