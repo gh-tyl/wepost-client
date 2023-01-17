@@ -13,88 +13,83 @@ import Nopage from "../pages/Nopage"
 
 export const pages = [
 	{
-		name: 'Home',
-		path: '/',
-		loginUsers: ['admin', 'user', 'guest'],
+		name: "Home",
+		path: "/",
+		loginUsers: ["admin", "user", "guest"],
 		element: Home,
 	},
 	{
-		name: 'Feed',
-		path: 'feed',
-		loginUsers: ['admin', 'user', 'guest'],
+		name: "Feed",
+		path: "feed",
+		loginUsers: ["admin", "user", "guest"],
 		element: Feed,
 	},
 	{
-		name: 'Post Article',
-		path: 'post_article',
-		loginUsers: ['user'],
+		name: "Post Article",
+		path: "post_article",
+		loginUsers: ["user"],
 		element: PostArticle,
 	},
 	{
-		name: 'Dashboard',
-		path: 'dashboard',
-		loginUsers: ['admin'],
+		name: "Dashboard",
+		path: "dashboard",
+		loginUsers: ["admin"],
 		element: Dashboard,
-	},
-	{
-		name: 'Register',
-		path: 'register',
-		loginUsers: ['guest'],
-	},
+	}
 ];
 export const auths = [
 	{
-		name: 'Profile',
-		path: 'profile',
-		loginUsers: ['admin', 'user'],
+		name: "Profile",
+		path: "profile",
+		loginUsers: ["admin", "user"],
 		element: Profile,
 	},
 	{
-		name: 'Login',
-		path: 'login',
-		loginUsers: ['guest'],
+		name: "Login",
+		path: "login",
+		loginUsers: ["guest"],
 		element: Login,
 	},
 	{
-		name: 'Register',
-		path: 'register',
-		loginUsers: ['guest'],
+		name: "Register",
+		path: "register",
+		loginUsers: ["guest"],
 		element: Register,
 	},
 	{
-		name: 'Logout',
-		path: 'logout',
-		loginUsers: ['admin', 'user'],
+		name: "Logout",
+		path: "logout",
+		loginUsers: ["admin", "user"],
 		element: Logout,
 	}
 ];
 
 export const others = [
 	{
-		name: '404',
-		path: '*',
-		loginUsers: ['admin', 'user', 'guest'],
+		name: "404",
+		path: "*",
+		loginUsers: ["admin", "user", "guest"],
 		element: Nopage,
 	},
 	{
-		name: 'Profile Edit',
-		path: 'profile_edit',
-		loginUsers: ['admin', 'user'],
+		name: "Profile Edit",
+		path: "profile_edit",
+		loginUsers: ["admin", "user"],
 		element: ProfileEdit,
 	},
 ];
 
 export const tests = [
 	{
-		name: 'Test Login',
-		path: 'test_login',
-		loginUsers: ['guest'],
+		name: "Test Login",
+		path: "test_login",
+		loginUsers: ["guest"],
 		element: TestLogin,
 	},
 	{
-		name: 'Test Profile',
-		path: 'test_profile',
-		loginUsers: ['admin', 'user'],
+		name: "Test Profile",
+		path: "test_profile",
+		loginUsers: ["admin", "user"],
 		element: TestProfile,
 	}
 ];

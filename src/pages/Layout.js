@@ -1,19 +1,19 @@
 import { Outlet, Link } from "react-router-dom"
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { blueGrey } from '@mui/material/colors';
-import { pages, auths } from '../config/config';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import { blueGrey } from "@mui/material/colors";
+import { pages, auths } from "../config/config";
 
 // You can change the login user here.
 // let loginUser = "admin"
@@ -50,7 +50,7 @@ function Layout() {
 			>
 				<Container maxWidth="xl">
 					<Toolbar disableGutters>
-						<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+						<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 							<IconButton
 								size="large"
 								aria-label="account of current user"
@@ -65,18 +65,18 @@ function Layout() {
 								id="menu-appbar"
 								anchorEl={anchorElNav}
 								anchorOrigin={{
-									vertical: 'bottom',
-									horizontal: 'left',
+									vertical: "bottom",
+									horizontal: "left",
 								}}
 								keepMounted
 								transformOrigin={{
-									vertical: 'top',
-									horizontal: 'left',
+									vertical: "top",
+									horizontal: "left",
 								}}
 								open={Boolean(anchorElNav)}
 								onClose={handleCloseNavMenu}
 								sx={{
-									display: { xs: 'block', md: 'none' },
+									display: { xs: "block", md: "none" },
 								}}
 							>
 								{pages.map((page) => (
@@ -85,7 +85,7 @@ function Layout() {
 											<Link
 												to={page.path}
 												style={{
-													textDecoration: 'none',
+													textDecoration: "none",
 													color: blueGrey[800],
 												}}
 											>
@@ -96,14 +96,14 @@ function Layout() {
 								))}
 							</Menu>
 						</Box>
-						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+						<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
 							{pages.map((page) => (
 								page.loginUsers.includes(loginUser) && (
 									<Link
 										key={page.name}
 										to={page.path}
 										style={{
-											textDecoration: 'none',
+											textDecoration: "none",
 											color: blueGrey[50],
 										}}
 									>
@@ -121,18 +121,18 @@ function Layout() {
 							</Tooltip>
 							<Menu
 								sx={{
-									mt: '45px',
+									mt: "45px",
 								}}
 								id="menu-appbar"
 								anchorEl={anchorElUser}
 								anchorOrigin={{
-									vertical: 'top',
-									horizontal: 'right',
+									vertical: "top",
+									horizontal: "right",
 								}}
 								keepMounted
 								transformOrigin={{
-									vertical: 'top',
-									horizontal: 'right',
+									vertical: "top",
+									horizontal: "right",
 								}}
 								open={Boolean(anchorElUser)}
 								onClose={handleCloseUserMenu}
@@ -146,7 +146,7 @@ function Layout() {
 											<Link
 												to={auth.path}
 												style={{
-													textDecoration: 'none',
+													textDecoration: "none",
 													color: blueGrey[800],
 												}}
 											>

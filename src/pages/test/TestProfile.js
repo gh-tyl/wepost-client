@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 import { Paper, Grid, Avatar, Container, Link, Button, Typography, Card } from "@mui/material";
-import ArticleIcon from '@mui/icons-material/Article';
-import PersonIcon from '@mui/icons-material/Person';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import TurnedInIcon from '@mui/icons-material/TurnedIn';
-import jsonSrv from '../../Services/jsonSrv';
-import { dec } from '../../lib/crypt';
+import ArticleIcon from "@mui/icons-material/Article";
+import PersonIcon from "@mui/icons-material/Person";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import TurnedInIcon from "@mui/icons-material/TurnedIn";
+import jsonSrv from "../../Services/jsonSrv";
+import { dec } from "../../lib/crypt";
 
 // let posts = [];
 
@@ -106,7 +106,7 @@ function TestProfile() {
 
 const PostSnippet = ({ postDetails }) => { // To get the artcle title and path 
 	return (
-		<Card variant='outlined' sx={{ marginBottom: "8px", padding: "8px" }}>
+		<Card variant="outlined" sx={{ marginBottom: "8px", padding: "8px" }}>
 			<Grid>
 				<Typography>
 					{postDetails.title}
