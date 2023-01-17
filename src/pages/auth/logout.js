@@ -1,7 +1,7 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-// import { useAuth } from '../hooks/useAuth';
-// import { useLoginUser } from '../hooks/useLoginUser';
+import React from "react";
+import { useHistory } from "react-router-dom";
+// import { useAuth } from "../hooks/useAuth";
+// import { useLoginUser } from "../hooks/useLoginUser";
 
 function Logout() {
 	// const { logout } = useAuth();
@@ -10,9 +10,9 @@ function Logout() {
 
 	const handleLogout = () => {
 		// logout();
-		// setLoginUser('guest');
-		// history.push('/');
-		console.log('logout');
+		// setLoginUser("guest");
+		// history.push("/");
+		console.log("logout");
 	};
 
 	return (

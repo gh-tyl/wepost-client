@@ -1,12 +1,12 @@
-import * as React from 'react';
+import * as React from "react";
 import jsonSrv from "../../Services/jsonSrv";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 import { Paper, Grid, Avatar, Container, Link, Button, Typography, Card } from "@mui/material";
-import ArticleIcon from '@mui/icons-material/Article';
-import PersonIcon from '@mui/icons-material/Person';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import TurnedInIcon from '@mui/icons-material/TurnedIn';
+import ArticleIcon from "@mui/icons-material/Article";
+import PersonIcon from "@mui/icons-material/Person";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import TurnedInIcon from "@mui/icons-material/TurnedIn";
 
 const posts = [  // dummy articles
 	{
@@ -52,7 +52,7 @@ function Profile() {
 	const navigate = useNavigate();  // to go to the profile edit page
 
 	const getUser = () => {
-		jsonSrv.post({token: 1000})
+		jsonSrv.post({ token: 1000 })
 			.then(res => {
 				console.log(res);
 				setdbUser(res.data);
@@ -135,7 +135,7 @@ function Profile() {
 
 const PostSnippet = ({ postDetails }) => { // To get the artcle title and path 
 	return (
-		<Card variant='outlined' sx={{ marginBottom: "8px", padding: "8px" }}>
+		<Card variant="outlined" sx={{ marginBottom: "8px", padding: "8px" }}>
 			<Grid>
 				<Typography>
 					{postDetails.title}

@@ -1,5 +1,5 @@
 import { Paper, Grid, Container, TextField, Typography, Button } from "@mui/material"
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 
 function ProfileEdit() {
 	return (
@@ -8,7 +8,7 @@ function ProfileEdit() {
 				<Paper elevation={1} sx={{ padding: "20px", marginTop: "20px" }}>
 					<Grid container spacing={2}>
 						<Grid item xs={12} sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-							<Typography variant="h5" component="div" color="primary" sx={{ fontWeight: 'bold' }}>
+							<Typography variant="h5" component="div" color="primary" sx={{ fontWeight: "bold" }}>
 								EDIT PROFILE
 							</Typography>
 							<div>
