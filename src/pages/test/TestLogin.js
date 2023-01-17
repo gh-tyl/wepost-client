@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react";
 import jsonSrv from "../../Services/jsonSrv";
 import { enc } from "../../lib/crypt";
+import { dec } from "../../lib/crypt";
 
 const theme = createTheme();
 
@@ -30,7 +31,7 @@ function TestLogin() {
 					console.log(data);
 					let token = enc(data.token);
 					sessionStorage.setItem("token", token);
-					console.log(sessionStorage.getItem("token"));
+					console.log(dec(sessionStorage.getItem("token")));
 				}
 			})
 			.catch((error) => {
