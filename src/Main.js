@@ -3,14 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./pages/Layout";
 import Nopage from "./pages/Nopage";
-import { pages, auths, tests } from './config/config';
+import { pages, auths, others, tests } from './config/config';
 
 function Main() {
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Layout />} >
-					<Route path="*" element={<Nopage />} />
 					{
 						pages.map((page, index) => {
 							return (
@@ -22,6 +21,13 @@ function Main() {
 						auths.map((auth, index) => {
 							return (
 								<Route key={index + pages.length} path={auth.path} element={<auth.element />} />
+							)
+						})
+					}
+					{
+						others.map((other, index) => {
+							return (
+								<Route key={index} path={other.path} element={<other.element />} />
 							)
 						})
 					}
