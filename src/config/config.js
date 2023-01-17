@@ -20,6 +20,16 @@ export const pages = [
 		path: 'dashboard',
 		loginUsers: ['admin'],
 	},
+	{
+		name: 'Manage Users',
+		path: 'manage_users',
+		loginUsers: ['admin'],
+	},
+	{
+		name: 'Manage Posts',
+		path: 'manage_posts',
+		loginUsers: ['admin'],
+	}
 ];
 export const auths = [
 	{

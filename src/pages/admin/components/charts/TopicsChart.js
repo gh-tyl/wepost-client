@@ -3,15 +3,38 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import {Pie} from "react-chartjs-2"
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
+import jsonSrv from "../../../../Services/jsonSrv";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 //Make query on database to search for all topics and display them accorddly
+
+let topics = [];
+let topicsVal = [];
+const init = ()=>{
+
+	jsonSrv.get("/articles/topics.php")
+	.then((res)=>{
+		console.log(res.data);
+		let resData = res.data;
+		resData.forEach((val)=>{
+			topics.push(val.genre);
+			topicsVal.push(val.qtd);
+		})
+		topics.push("Others");
+		topicsVal.push(14);
+	})
+	.catch((err)=>{
+		console.log(err);
+	})
+	console.log(topics);
+}
+init();
 export const data = {
-	labels: ['Studies', 'Sports', 'Nature', 'Cryptocurrency', 'Tech', 'Carrers'],
+	labels: topics,
 	datasets: [
 	  {
 		label: '# of Votes',
-		data: [12, 19, 3, 5, 2, 3],
+		data: topicsVal,
 		backgroundColor: [
 		  'rgba(255, 99, 132, 0.2)',
 		  'rgba(54, 162, 235, 0.2)',

@@ -12,6 +12,8 @@ import Register from "./pages/auth/register";
 import Logout from "./pages/auth/logout";
 import Profile from "./pages/common/profile";
 import TestLogin from "./pages/test/TestLogin";
+import ManageUsers from "./pages/admin/ManageUsers"
+import ManagePosts from "./pages/admin/ManagePosts"
 
 function Main() {
 	return (
@@ -22,6 +24,8 @@ function Main() {
 					<Route path="feed" element={<Feed />} />
 					<Route path="post_article" element={<PostArticle />} />
 					<Route path="dashboard" element={<Dashboard />} />
+					<Route path="manage_users" element={<ManageUsers />} />
+					<Route path="manage_posts" element={<ManagePosts />} />
 					<Route path="login" element={<Login />} />
 					<Route path="register" element={<Register />} />
 					<Route path="logout" element={<Logout />} />

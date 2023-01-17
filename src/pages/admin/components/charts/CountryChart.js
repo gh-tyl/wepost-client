@@ -7,15 +7,15 @@ import jsonSrv from "../../../../Services/jsonSrv";
 ChartJS.register(ArcElement, Tooltip, Legend);
 //Make query on database to search for all countries and display accorddly
 
-const init = ()=>{
-	jsonSrv.get("/articles/feed.php")
-	.then((res)=>{
-		console.log(res);
-	})
-	.catch((err)=>{
-		console.log(err);
-	})
-}
+// const init = ()=>{
+// 	jsonSrv.get("/articles/feed_copy.php")
+// 	.then((res)=>{
+// 		console.log(res.data);
+// 	})
+// 	.catch((err)=>{
+// 		console.log(err);
+// 	})
+// }
 
 export const data = {
 	labels: ['Brazil', 'Japan', 'Greece', 'South Korea', 'Germany', 'Canada'],
@@ -45,7 +45,7 @@ export const data = {
   };
 
 function CountryChart() {
-	init()
+	// init()
 	return (
 		<Paper elevation={3}
 		sx={{width: "50vh", display: "flex", flexDirection: "column", p: 2, alignItems: "center", textAlign: "center"}}>
