@@ -7,6 +7,7 @@ import Register from "../pages/auth/register"
 import Logout from "../pages/auth/logout"
 import Profile from "../pages/common/profile"
 import TestLogin from "../pages/test/TestLogin"
+import TestProfile from "../pages/test/TestProfile"
 // import Nopage from "../pages/Nopage"
 
 export const pages = [
@@ -67,5 +68,11 @@ export const tests = [
 		path: 'test_login',
 		loginUsers: ['guest'],
 		element: TestLogin,
+	},
+	{
+		name: 'Test Profile',
+		path: 'test_profile',
+		loginUsers: ['admin', 'user'],
+		element: TestProfile,
 	}
 ];
