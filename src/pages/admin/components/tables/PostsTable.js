@@ -11,63 +11,58 @@ import Box from '@mui/material/Box';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
-const users = [
+const posts = [
   {
-    id: 1004,
-    fname: "Matty",
-    lname: "Munning",
-    email: "mmunning4@nymag.com",
-    gender: "Male",
-    age: 20,
-    country: "Indonesia",
-    img: "pic2.jpg"
+    id: 1,
+    authorID: 1004,
+    authorName: "Matty Munning",
+    title: "Programming",
+    likes: 23,
+    stores: 32,
+    date: "test"
   },
   {
-    id: 1005,
-    fname: "Tobe",
-    lname: "Radclige",
-    email: "tradcliffe5@imageshack.us",
-    gender: "Other",
-    age: 33,
-    country: "Sweden",
-    img: "pic1.jpg"
+    id: 4,
+    authorID: 1005,
+    authorName: "Tobe Radclige",
+    title: "Programming",
+    likes: 13,
+    stores: 2,
+    date: "test"
   },
 ]
 
-function UserTable() {
+function PostsTable() {
   return (
     <Box>
-			<Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Users table</Typography>
+			<Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Posts table</Typography>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="user table">
+        <Table sx={{ minWidth: 650 }} aria-label="posts table">
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
-              <TableCell align="center">First Name</TableCell>
-              <TableCell align="center">Last Name</TableCell>
-              <TableCell align="center">Email</TableCell>
-              <TableCell align="center">Gender</TableCell>
-              <TableCell align="center">Age</TableCell>
-              <TableCell align="center">Country</TableCell>
+              <TableCell align="center">Posted by</TableCell>
+              <TableCell align="center">Topic</TableCell>
+              <TableCell align="center">Likes</TableCell>
+              <TableCell align="center">Stores</TableCell>
+              <TableCell align="center">Date Posted</TableCell>
               <TableCell align="center">Options</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((user) => (
+            {posts.map((post) => (
               <TableRow
-                key={user.id}
+                key={post.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {user.id}
+                  {post.id}
                 </TableCell>
-                <TableCell align="center">{user.fname}</TableCell>
-                <TableCell align="center">{user.lname}</TableCell>
-                <TableCell align="center">{user.email}</TableCell>
-                <TableCell align="center">{user.gender}</TableCell>
-                <TableCell align="center">{user.age}</TableCell>
-                <TableCell align="center">{user.country}</TableCell>
+                <TableCell align="center">{post.authorName}</TableCell>
+                <TableCell align="center">{post.title}</TableCell>
+                <TableCell align="center">{post.likes}</TableCell>
+                <TableCell align="center">{post.stores}</TableCell>
+                <TableCell align="center">{post.date}</TableCell>
                 <TableCell align="center">
                   <Button color="primary" variant="outlined" startIcon={<EditIcon />} sx={{marginRight: 1}}>Edit</Button>
                   <Button color="primary" variant="outlined" endIcon={<DeleteIcon />}>Delete</Button>
@@ -80,4 +75,4 @@ function UserTable() {
     </Box>
   );
 }
-export default UserTable;
+export default PostsTable;

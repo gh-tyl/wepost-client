@@ -29,8 +29,8 @@ export const data = {
 function GenderChart() {
 	return (
 		<Paper elevation={3}
-		sx={{width: "60vh", display: "flex", flexDirection: "column", p: 2, alignItems: "center", textAlign: "center"}}>
-			<Typography component={"h2"} variant={"h4"} color={"red"}>Genders</Typography>
+		sx={{width: "50vh", display: "flex", flexDirection: "column", p: 2, alignItems: "center", textAlign: "center"}}>
+			<Typography component={"h2"} variant={"h5"} color={"red"}>Genders</Typography>
 			<Pie data={data} />
 		</Paper>
 	)
