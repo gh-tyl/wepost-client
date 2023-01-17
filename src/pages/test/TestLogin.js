@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react";
 import jsonSrv from "../../Services/jsonSrv";
-import enc from "../../lib/crypt";
+import { enc } from "../../lib/crypt";
 
 const theme = createTheme();
 
