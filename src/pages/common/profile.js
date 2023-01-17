@@ -2,18 +2,18 @@ import * as React from 'react';
 import profileSrv from "../../Services/profileSrv";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react'
-import { Paper, Grid, Avatar, Container, Link, CardContent, Button, Typography, Card } from "@mui/material";
+import { Paper, Grid, Avatar, Container, Link, Button, Typography, Card } from "@mui/material";
 import ArticleIcon from '@mui/icons-material/Article';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import TurnedInIcon from '@mui/icons-material/TurnedIn';
 
-const posts = [
+const posts = [  // dummy articles
 	{
 		articleId: 1,
 		userId: 1000,
 		articlePath: "path",
-		title: "summer is the best season",
+		title: "Summer is the best season",
 		body: "asdfghjhgfdsdfgbhnmfdfghj",
 		genreId: 20,
 		likes: 50000,
@@ -21,8 +21,8 @@ const posts = [
 	{
 		articleId: 2,
 		userId: 1000,
-		articlePath: " za path",
-		title: "why i hate winter",
+		articlePath: "path",
+		title: "Vitamin D is important in the winter",
 		body: "asdfghjhgfdsdfgbhnmfdfghj",
 		genreId: 20,
 		likes: 50000
@@ -30,26 +30,26 @@ const posts = [
 	{
 		articleId: 3,
 		userId: 1000,
-		articlePath: " za path",
-		title: "my love for winter",
+		articlePath: "path",
+		title: "Time flies!",
 		body: "asdfghjhgfdsdfgbhnmfdfghj",
 		genreId: 20,
 		likes: 50000
 	}
-]
+];
 
-const user = {
+const user = { // dummy user info
 	userName: "Miku Fujiwara",
 	followers: "?",
 	likes: "?",
 	saved: "?",
 	country: "Japan",
 	posts: posts,
-}
+};
 
 function Profile() {
 	const [dbuser, setdbUser] = useState()
-	const navigate = useNavigate();
+	const navigate = useNavigate();  // to go to the profile edit page
 
 	const getUser = () => {
 		profileSrv.profileInfo({ userId: 1000 })
@@ -82,7 +82,7 @@ function Profile() {
 				<Grid container spacing={2}>
 					<Grid item xs={4} >
 						<Avatar
-							alt="Remy Sharp"
+							alt="Profile picture"
 							src="/profile.jpg"
 							sx={{ width: 150, height: 150 }}
 						/>
@@ -131,9 +131,9 @@ function Profile() {
 			</Paper>
 		</Container>
 	)
-}
+};
 
-const PostSnippet = ({ postDetails }) => {
+const PostSnippet = ({ postDetails }) => { // To get the artcle title and path 
 	return (
 		<Card variant='outlined' sx={{ marginBottom: "8px", padding: "8px" }}>
 			<Grid>
@@ -141,11 +141,10 @@ const PostSnippet = ({ postDetails }) => {
 					{postDetails.title}
 				</Typography>
 				<Link href={postDetails.articlePath}>Read the article</Link>
-
 			</Grid>
 		</Card>
 	)
-}
+};
 
 export default Profile;
 
