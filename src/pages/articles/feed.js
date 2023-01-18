@@ -8,25 +8,25 @@ import { useEffect } from 'react';
 
 function Feed() {
 	const [res, setRes] = useState([]);
-	useEffect(()=>{
+	useEffect(() => {
 		const get = () => {
-			jsonSrv.post("pages/articles/feed_react.php","")
-			.then(response=>{
-				setRes(response.data);
-				console.log(response.data);
-			})
-			.catch(err=>{
-				console.log(err);
-			})
+			jsonSrv.post("articles/feed_react.php", "")
+				.then(response => {
+					setRes(response.data);
+					console.log(response.data);
+				})
+				.catch(err => {
+					console.log(err);
+				})
 		};
 		get();
-	},[]);
+	}, []);
 
 	return (
 		<div>
 			<Container sx={{ marginY: 3 }}>
 				<Grid container spacing={3}>
-				{res.map((post,key)=> <FeedCard post={post} key={key}/>)}
+					{res.map((post, key) => <FeedCard post={post} key={key} />)}
 				</Grid>
 			</Container>
 		</div>
