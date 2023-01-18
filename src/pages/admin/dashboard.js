@@ -7,6 +7,30 @@ import UserTable from "./components/tables/UserTable";
 import Container from "@mui/material/Container";
 import Box from '@mui/material/Box';
 
+import jsonSrv from "../../Services/jsonSrv";
+import cryptoJs from "crypto-js";
+import PostsTable from "./components/tables/PostsTable";
+
+// function initDash(){
+// 	const data = new FormData(event.target);
+// 	jsonSrv.post("/users/profile.php", data)
+// 	.then((response) => {
+// 		console.log(response.data);
+// 		if (response.data.status === "success") {
+// 			let data = response.data.data;
+// 			console.log(data);
+// 			let token = cryptoJs.AES.encrypt(data.token,
+// 				process.env.REACT_APP_CRYPTOJS_SECRET_KEY).toString();
+// 			sessionStorage.setItem("token", token);
+// 			console.log(sessionStorage.getItem("token"));
+// 		}
+// 	})
+// 	.catch((error) => {
+// 		console.log(error);
+// 	});
+// }
+
+
 function Dashboard() {
 	return (
 		<>
@@ -18,7 +42,7 @@ function Dashboard() {
 						alignItems: "center",
 						flexWrap: "wrap",
 						justifyContent: "space-around",
-						gap: "5vh",
+						gap: "8vh",
 						marginY: 3
 					}}
 				>			
@@ -27,8 +51,9 @@ function Dashboard() {
 					<AgeChart />
 					<GenderChart />
 				</Box>
-				<Box>
+				<Box my={2} sx={{display: "flex", flexDirection: "column", rowGap: "10vh"}}>
 					<UserTable />
+					<PostsTable />
 				</Box>
 			</Container>
 		</>
