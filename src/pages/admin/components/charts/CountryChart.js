@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 // dashboard page for admin
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from "react-chartjs-2"
-import jsonSrv from "../../../../Services/jsonSrv";
 ChartJS.register(ArcElement, Tooltip, Legend);
 //Make query on database to search for all countries and display accorddly
 

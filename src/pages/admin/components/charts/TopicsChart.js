@@ -4,7 +4,6 @@ import { Pie } from "react-chartjs-2"
 import Paper from "@mui/material/Paper";
 import Typography from '@mui/material/Typography';
 import jsonSrv from "../../../../Services/jsonSrv";
-import { useEffect, useState } from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 //Make query on database to search for all topics and display them accorddly
@@ -43,7 +42,7 @@ const init = () => {
 			let resData = res.data.data.topics;
 			resData.forEach((val) => {
 				topics.push(val.genre);
-				topicsVal.push(val.qtd);
+				topicsVal.push(parseInt(val.qtd));
 			})
 			topics.push("Others");
 			topicsVal.push(14);
