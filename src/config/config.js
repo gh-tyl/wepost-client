@@ -2,6 +2,8 @@ import Home from "../pages/Home"
 import Feed from "../pages/articles/feed"
 import PostArticle from "../pages/articles/post"
 import Dashboard from "../pages/admin/dashboard"
+import ManageUsers from "../pages/admin/ManageUsers"
+import ManagePosts from "../pages/admin/ManagePosts"
 import Login from "../pages/auth/login"
 import Register from "../pages/auth/register"
 import Logout from "../pages/auth/logout"
@@ -35,6 +37,18 @@ export const pages = [
 		path: "dashboard",
 		loginUsers: ["admin"],
 		element: Dashboard,
+	},
+	{
+		name: 'Manage Users',
+		path: 'manage_users',
+		loginUsers: ['admin'],
+		element: ManageUsers,
+	},
+	{
+		name: 'Manage Posts',
+		path: 'manage_posts',
+		loginUsers: ['admin'],
+		element: ManagePosts,
 	}
 ];
 export const auths = [
