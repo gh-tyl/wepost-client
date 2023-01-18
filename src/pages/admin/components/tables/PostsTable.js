@@ -35,7 +35,7 @@ const posts = [
 function PostsTable() {
   return (
     <Box>
-			<Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Posts table</Typography>
+      <Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Posts table</Typography>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="posts table">
           <TableHead>
@@ -64,7 +64,7 @@ function PostsTable() {
                 <TableCell align="center">{post.stores}</TableCell>
                 <TableCell align="center">{post.date}</TableCell>
                 <TableCell align="center">
-                  <Button color="primary" variant="outlined" startIcon={<EditIcon />} sx={{marginRight: 1}}>Edit</Button>
+                  <Button color="primary" variant="outlined" startIcon={<EditIcon />} sx={{ marginRight: 1 }}>Edit</Button>
                   <Button color="primary" variant="outlined" endIcon={<DeleteIcon />}>Delete</Button>
                 </TableCell>
               </TableRow>

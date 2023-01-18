@@ -38,7 +38,7 @@ const users = [
 function UserTable() {
   return (
     <Box>
-			<Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Users table</Typography>
+      <Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Users table</Typography>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="user table">
           <TableHead>
@@ -69,7 +69,7 @@ function UserTable() {
                 <TableCell align="center">{user.age}</TableCell>
                 <TableCell align="center">{user.country}</TableCell>
                 <TableCell align="center">
-                  <Button color="primary" variant="outlined" startIcon={<EditIcon />} sx={{marginRight: 1}}>Edit</Button>
+                  <Button color="primary" variant="outlined" startIcon={<EditIcon />} sx={{ marginRight: 1 }}>Edit</Button>
                   <Button color="primary" variant="outlined" endIcon={<DeleteIcon />}>Delete</Button>
                 </TableCell>
               </TableRow>

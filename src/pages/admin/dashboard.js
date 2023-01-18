@@ -20,11 +20,11 @@ function Dashboard() {
 						gap: "8vh",
 						marginY: 3
 					}}
-				>			
-					<CountryChart />
+				>
+					{/* <CountryChart /> */}
 					<TopicsChart />
-					<AgeChart />
-					<GenderChart />
+					{/* <AgeChart /> */}
+					{/* <GenderChart /> */}
 				</Box>
 			</Container>
 		</>
