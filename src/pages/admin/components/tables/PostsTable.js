@@ -35,7 +35,7 @@ const posts = [
 function PostsTable() {
   return (
     <Box>
-			<Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Posts table</Typography>
+      <Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Posts table</Typography>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="posts table">
           <TableHead>
