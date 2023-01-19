@@ -9,7 +9,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import { ThumbUp } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
-function PostArticle() {
+
+function Article() {
 	const [queryStr] = useSearchParams();
 	const [postData, setData] = useState("");
 	const [editFlag, setEditFlag] = useState(false);
@@ -64,9 +65,9 @@ function PostArticle() {
 			})
 	}
 	useEffect(() => { loadArticle() }, [])
+
 	return (
 		<>
-
 			<h1 style={{ justifyContent: 'center', display: 'flex' }}> Article</h1>
 			<div >
 				{(!editFlag) ?
@@ -107,7 +108,6 @@ function PostArticle() {
 										</Typography>
 										<div style={{ alignContent: 'center', display: 'flex', flexDirection: "column", rowGap: "1vh" }}>
 											{postData.comments.map((comment, idx) =>
-
 												<>
 													<Card sx={{ backgroundColor: 'lightgray', padding: "1vh	" }} key={idx} >
 														<Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
@@ -119,17 +119,13 @@ function PostArticle() {
 													</Card>
 													<br></br>
 												</>
-
-
 											)}
 										</div>
 									</CardContent>
-
 								</Card>
 							</div>
 							<br></br>
 						</>
-
 						: null
 					: (postData != "") ?
 						< >
@@ -141,7 +137,6 @@ function PostArticle() {
 												{postData.post.title}
 											</Typography>
 											<Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
-
 												Posted by: {postData.post.first_name} {postData.post.last_name}
 											</Typography>
 											<Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
@@ -154,7 +149,6 @@ function PostArticle() {
 												<ThumbUp sx={{ width: 18, color: "#F75959" }} />{postData.post.likes}
 											</Typography>
 											<textarea name='newContent' style={{ textAlign: "justify", width: "99%", height: "300px", resize: "none" }} id="txtarea" onChange={textAreaHeight} onFocus={textAreaHeight} defaultValue={postData.content}  >
-
 											</textarea>
 											<CardActions>
 												<Button onClick={cancelEdit} variant="outlined" type="button" size='small' color='error'><DeleteIcon fontSize="small" />Cancel</Button>
@@ -171,7 +165,6 @@ function PostArticle() {
 											</Typography>
 											<div style={{ alignContent: 'center', display: 'flex', flexDirection: "column", rowGap: "1vh" }}>
 												{postData.comments.map((comment, idx) =>
-
 													<>
 														<Card sx={{ backgroundColor: 'lightgray', padding: "1vh" }} key={idx} >
 															<Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
@@ -183,8 +176,6 @@ function PostArticle() {
 														</Card>
 														<br></br>
 													</>
-
-
 												)}
 											</div>
 										</CardContent>
@@ -193,14 +184,11 @@ function PostArticle() {
 							</div>
 							<br></br>
 						</>
-
 						: null
 				}
 			</div>
-
-
 		</>
 	);
 }
 
-export default PostArticle;
+export default Article;

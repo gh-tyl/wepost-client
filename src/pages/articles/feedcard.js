@@ -14,7 +14,7 @@ function FeedCard({ post }) {
             <Paper elevation={3}>
                 <Box padding={2}>
                     <Typography variant="h5" component="h5" marginLeft={1}>
-                        <Button onClick={() => { navigate("../post_article?id=" + post.id) }} variant="text" color="primary">
+                        <Button onClick={() => { navigate("../article?id=" + post.id) }} variant="text" color="primary">
                             {post.title}
                         </Button>
                     </Typography>
