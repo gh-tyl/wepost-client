@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import { ThumbUp } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-function PostArticle() {
+function Article() {
 	const [queryStr] = useSearchParams();
 	const [postData, setData] = useState("");
 	const [editFlag, setEditFlag] = useState(false);
@@ -191,4 +191,4 @@ function PostArticle() {
 	);
 }
 
-export default PostArticle;
+export default Article;

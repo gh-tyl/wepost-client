@@ -1,6 +1,7 @@
 import Home from "../pages/Home"
 import Feed from "../pages/articles/feed"
-import PostArticle from "../pages/articles/post"
+import Article from "../pages/articles/article"
+import PostArticle from "../pages/articles/post_article"
 import Dashboard from "../pages/admin/dashboard"
 import ManageUsers from "../pages/admin/ManageUsers"
 import ManagePosts from "../pages/admin/ManagePosts"
@@ -90,6 +91,12 @@ export const others = [
 		path: "profile_edit",
 		loginUsers: ["admin", "user"],
 		element: ProfileEdit,
+	},
+	{
+		name: "Article",
+		path: "article",
+		loginUsers: ["admin", "user", "guest"],
+		element: Article,
 	},
 ];
 
