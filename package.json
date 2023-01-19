@@ -47,5 +47,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "## Installation ```bash git clone https://github.com/gh-tyl/wepost-client.git cd wepost-client cp .env.example .env.local git checkout develop git checkout -b feature/your_feature_branch ```",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh-tyl/wepost-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gh-tyl/wepost-client/issues"
+  },
+  "homepage": "https://github.com/gh-tyl/wepost-client#readme"
 }
