@@ -6,7 +6,9 @@ import jsonSrv from '../../Services/jsonSrv';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-function Feed() {
+function Feed({ data }) {
+	let loginUser = data.loginUser;
+	const setUser = data.setUser;
 	const [res, setRes] = useState([]);
 	useEffect(() => {
 		const get = () => {

@@ -14,15 +14,43 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { blueGrey } from "@mui/material/colors";
 import { pages, auths } from "../config/config";
+import { useState, useEffect } from "react";
 
+// let loginUser = sessionStorage.getItem("userRole");
+// if (!loginUser) {
+// 	loginUser = "guest"
+// }
+
+// console.log(loginUser)
 // You can change the login user here.
-let loginUser = "admin"
+// let loginUser = "admin"
 // let loginUser = "user"
 // let loginUser = "guest"
 
-function Layout() {
-	const [anchorElNav, setAnchorElNav] = React.useState(null);
-	const [anchorElUser, setAnchorElUser] = React.useState(null);
+// function Layout({ loginUser, setUser }) {
+function Layout({ data }) {
+	let loginUser = data.loginUser;
+	const setUser = data.setUser;
+	const [anchorElNav, setAnchorElNav] = useState(null);
+	const [anchorElUser, setAnchorElUser] = useState(null);
+	// const [loginUser, setLoginUser] = useState("");
+
+	useEffect(() => {
+		// let loginUser = sessionStorage.getItem("loginUser");
+		// if (!loginUser) {
+		// loginUser = "guest";
+		// }
+		// setLoginUser(loginUser);
+		// setUser()
+		console.log("before: loginUser");
+		console.log(loginUser);
+		if (sessionStorage.getItem("loginUser")) {
+			setUser(sessionStorage.getItem("loginUser"))
+		}
+		console.log("after: loginUser");
+		console.log(loginUser);
+	}, []);
+	// console.log(loginUser);
 
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);

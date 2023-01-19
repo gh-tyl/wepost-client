@@ -75,7 +75,6 @@ function Profile() {
 
 	}, [dbuser])
 
-
 	return (
 		<Container maxWidth="sm">
 			<Paper elevation={1} sx={{ padding: "20px", marginTop: "20px" }}>
