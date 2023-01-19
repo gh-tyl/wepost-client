@@ -42,7 +42,7 @@ function Register() {
           setEmail("");
           setPass("");
           // redirect to login page
-          navigate("/login");
+          // navigate("/login");
         }
       })
       .catch((error) => {
