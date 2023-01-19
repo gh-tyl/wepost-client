@@ -35,7 +35,7 @@ function Main() {
 					{
 						auths.map((auth, index) => {
 							return (
-								<Route key={index + pages.length} path={auth.path} element={<auth.element />} />
+								<Route key={index + pages.length} path={auth.path} element={<auth.element data={data} />} />
 							)
 						})
 					}

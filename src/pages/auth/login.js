@@ -22,6 +22,8 @@ const theme = createTheme();
 
 function Login({ data }) {
 	const navigate = useNavigate();
+	let loginUser = data.loginUser;
+	const setUser = data.setUser;
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -36,7 +38,9 @@ function Login({ data }) {
 					let role = data.role.toLowerCase()
 					sessionStorage.setItem("token", token);
 					sessionStorage.setItem("loginUser", role);
-					// console.log(dec(sessionStorage.getItem("token")));
+					console.log(sessionStorage.getItem("token"));
+					console.log(sessionStorage.getItem("loginUser"));
+					setUser(role);
 					navigate("/feed")
 					// refresh page
 					// window.location.reload();
