@@ -1,21 +1,22 @@
 // This is the feedcard page
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { ThumbUp } from '@mui/icons-material';
 
 function FeedCard({ post }) {
-
+    const navigate = useNavigate();
     return (
         <Grid item xs={6}>
             <Paper elevation={3}>
                 <Box padding={2}>
                     <Typography variant="h5" component="h5" marginLeft={1}>
-                        <Link to="../post_article" style={{ textDecoration: 'none', color: "#538DD7" }}>
+                        <Button onClick={() => { navigate("../post_article?id=" + post.id) }} variant="text" color="primary">
                             {post.title}
-                        </Link>
+                        </Button>
                     </Typography>
                 </Box>
                 <Box paddingLeft={2} paddingBottom={1}
