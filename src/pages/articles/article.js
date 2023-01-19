@@ -25,18 +25,18 @@ function Article() {
 			if (queryStr.get("edit") == "true") setEditFlag(true)
 		}
 		formData.append('post_id', id)
-		jsonSrv.post("/articles/post_article.php", formData)
+		jsonSrv.post("/articles/article.php", formData)
 			.then(res => {
 				console.log(res.data);
 				setData(res.data);
 			})
 	}
 	const editUrl = () => {
-		navigate(`/post_article?id=${postData.post.id}&&edit=true`);
+		navigate(`/article?id=${postData.post.id}&&edit=true`);
 		setEditFlag(true);
 	}
 	const cancelEdit = () => {
-		navigate(`/post_article?id=${postData.post.id}`);
+		navigate(`/article?id=${postData.post.id}`);
 		setEditFlag(false);
 
 	}
