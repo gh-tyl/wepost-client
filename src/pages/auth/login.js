@@ -33,7 +33,7 @@ function Login({ data }) {
 				// console.log(response.data);
 				if (response.data.status === "success") {
 					let data = response.data.data;
-					// console.log(data);
+					console.log(data);
 					let token = enc(data.token);
 					let role = data.role.toLowerCase()
 					sessionStorage.setItem("token", token);
