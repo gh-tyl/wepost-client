@@ -10,32 +10,27 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-
-
-const users = [
-  {
-    id: 1004,
-    fname: "Matty",
-    lname: "Munning",
-    email: "mmunning4@nymag.com",
-    gender: "Male",
-    age: 20,
-    country: "Indonesia",
-    img: "pic2.jpg"
-  },
-  {
-    id: 1005,
-    fname: "Tobe",
-    lname: "Radclige",
-    email: "tradcliffe5@imageshack.us",
-    gender: "Other",
-    age: 33,
-    country: "Sweden",
-    img: "pic1.jpg"
-  },
-]
+import jsonSrv from '../../../../Services/jsonSrv';
+import { useState, useEffect } from 'react';
 
 function UserTable() {
+  const [users, setUser] = useState([]);
+
+  const init = () => {
+    jsonSrv.get("/users/all_users.php")
+      .then((res) => {
+        let resData = res.data.data;
+        // console.log(resData);
+        setUser(resData);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+  
+  useEffect(() => {
+    init();
+  },[]);
   return (
     <Box>
       <Typography component={"h2"} variant={"h4"} align={"center"} color={"red"}>Users table</Typography>
@@ -62,12 +57,21 @@ function UserTable() {
                 <TableCell component="th" scope="row">
                   {user.id}
                 </TableCell>
-                <TableCell align="center">{user.fname}</TableCell>
-                <TableCell align="center">{user.lname}</TableCell>
+                <TableCell align="center">{user.first_name}</TableCell>
+                <TableCell align="center">{user.last_name}</TableCell>
                 <TableCell align="center">{user.email}</TableCell>
-                <TableCell align="center">{user.gender}</TableCell>
-                <TableCell align="center">{user.age}</TableCell>
-                <TableCell align="center">{user.country}</TableCell>
+                <TableCell align="center">
+                {
+                  (user.gender==null) ? "Not Informed" : user.gender
+                }</TableCell>
+                <TableCell align="center">
+                {
+                  (user.age==null) ? "Not Informed" : user.age
+                }</TableCell>
+                <TableCell align="center">
+                {
+                  (user.country==null) ? "Not Informed" : user.country
+                }</TableCell>
                 <TableCell align="center">
                   <Button color="primary" variant="outlined" startIcon={<EditIcon />} sx={{marginRight: 1}}>Edit</Button>
                   <Button color="primary" variant="outlined" endIcon={<DeleteIcon />}>Delete</Button>
