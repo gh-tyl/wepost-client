@@ -11,9 +11,16 @@ import Link from "@mui/material/Link";
 import Avatar from "@mui/material/Avatar";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { blueGrey } from "@mui/material/colors";
+// import function to send data to server
+import jsonSrv from "../../Services/jsonSrv";
+// import navigate to redirect to another page
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 function Register() {
+  // useNavigate hook to redirect to another page
+  const navigate = useNavigate();
+
   const classes = createTheme();
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -23,11 +30,24 @@ function Register() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(fname, lname, email, pass);
-    // CLEAR FORM FIELDS
-    setFname("");
-    setLname("");
-    setEmail("");
-    setPass("");
+    // create FormData object to send data to server
+    let data = new FormData(event.target);
+    // send data to server
+    jsonSrv.post("/auth/register.php", data)
+      .then((response) => {
+        if (response.data.status === "success") {
+          // CLEAR FORM FIELDS
+          setFname("");
+          setLname("");
+          setEmail("");
+          setPass("");
+          // redirect to login page
+          // navigate("/login");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   return (
@@ -56,53 +76,55 @@ function Register() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   className={classes.textField}
+                  fullWidth
+                  id="fname"
                   label="First Name"
+                  name="fname"
                   value={fname}
                   onChange={e => setFname(e.target.value)}
                   autoComplete="given-name"
-                  required
-                  fullWidth
                   autoFocus
+                  required
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
+                  className={classes.textField}
                   fullWidth
                   id="lname"
                   label="Last Name"
                   name="lname"
-                  className={classes.textField}
                   value={lname}
                   onChange={e => setLname(e.target.value)}
                   autoComplete="family-name"
+                  required
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
+                  className={classes.textField}
                   fullWidth
                   id="email"
                   label="Email Address"
                   name="email"
-                  autoComplete="email"
-                  className={classes.textField}
                   value={email}
                   onChange={e => setEmail(e.target.value)}
+                  autoComplete="email"
+                  required
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
-                  fullWidth
                   className={classes.textField}
+                  fullWidth
+                  id="pass"
+                  label="Password"
+                  name="password"
+                  type="password"
                   value={pass}
                   onChange={e => setPass(e.target.value)}
-                  name="pass"
-                  label="Password"
-                  type="pass"
-                  id="pass"
                   autoComplete="new-password"
+                  required
                 />
               </Grid>
             </Grid>
@@ -113,10 +135,10 @@ function Register() {
               sx={{ mt: 3, mb: 2, bgcolor: { blueGrey } }}
             >
               Sign Up
-            </Button >
+            </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="http://localhost:3000/Login" variant="body2">
+                <Link href="./login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
